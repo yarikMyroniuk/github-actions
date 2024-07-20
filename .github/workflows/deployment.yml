@@ -1,9 +1,9 @@
 name: Deploy React App
 on: push
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
-    deploy:
+    steps:
       - name: Get repository code
         uses: actions/checkout@v4
       - name: Install dependecies
