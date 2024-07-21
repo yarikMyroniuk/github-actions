@@ -1,0 +1,21 @@
+name: Deploy React App
+on:
+  push:
+      branches:
+        - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v4
+      - name: Install dependecies
+        run: npm ci
+      - name: Run tests
+        run: npm run test
+      - name: Run eslint
+        run: npm run lint
+      - name: Build application
+        run: npm run build
+      - name: Deploy application
+        run: echo Deploying application
