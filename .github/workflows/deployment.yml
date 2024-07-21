@@ -9,8 +9,9 @@ jobs:
   deploy:
     strategy:
       matrix:
-        node-version: [16, 18]
+        node-version: [14, 16]
         os: [ubuntu-latest, windows-latest]
+    continue-on-error: true
     runs-on: ${{ matrix.os }}
     steps:
       - name: Get repository code
